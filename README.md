@@ -28,7 +28,9 @@ Open any other connected device in your network, open browser and nagivate to
 <br>
 
 > YOUR WIFI IP ADDRESS: 3000
+> <br>
 > Example:
+> <br>
 > 192.168.134.12:3000
 
 ## Nodejs
