@@ -22,4 +22,4 @@ This is built using node js. I got to learn more on the backend part of how stre
 
 ## Resoucres
 
-(How is streaming done) [https://www.cloudflare.com/learning/performance/what-is-streaming/]
+[How is streaming done](https://www.cloudflare.com/learning/performance/what-is-streaming/)
