@@ -3,9 +3,13 @@ const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
 
-// Custom Controllers
+// Custom Controllers/modules
 const videoController = require("./controllers/video/videocontroller");
 const uploadController = require("./controllers/upload/uploadcontrollers");
+
+//initialize db connection
+const connection = require("./connection");
+connection();
 
 //Initialization as per docs for modules
 const urlparser = bodyparser.urlencoded({ extended: false });
