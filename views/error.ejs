@@ -1,0 +1,9 @@
+<%- include("./partials/head.ejs") %>
+<div class="d-flex justify-content-center flex-direction-column align-items-center p-4" style="min-height:100%">
+    <h1 class="display-4 text-danger">
+        <%=err.status%>!! <%=err.message%>
+    </h1><br>
+    <a href="<%=url%>">Try Again</a>
+</div>
+
+<%- include("./partials/tail.ejs") %>

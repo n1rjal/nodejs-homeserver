@@ -1,28 +1,31 @@
 const express = require("express");
 const fs = require("fs");
+const videoModel = require("../../models/videomodel");
 
 videoRouter = express();
 
-videoRouter.get("/", (req, res) => {
+videoRouter.get("/",async (req, res) => {
   //this will read the files in assets folder
-  const assets = fs.readdirSync("assets");
+  const assets = await videoModel.find();
   res.render("home/home", { assets });
 });
 
-videoRouter.get("/watching/:video", function (req, res) {
-  const vidName = req.params.video;
-  const assets = fs.readdirSync("assets");
+videoRouter.get("/watching/:video",async function (req, res) {
+  const videoSaved =await videoModel.findOne({title:req.params.video});
+  var video = videoSaved.videoPath.split("/")[videoSaved.videoPath.split("/").length-1];
+  console.log(video)
+  const assets = fs.readdirSync("assets/videos");
 
-  if (!assets.includes(req.params.video)) {
+  if (!assets.includes(video)) {
     res.status(404).send("<h1>404! file not found</h1>");
     return;
   }
-  res.render("home/watching", { vidName });
+  res.render("home/watching", { vidName:video ,"video":videoSaved});
 });
 
 videoRouter.get("/video/:video", function (req, res) {
-  const path = "assets/" + req.params.video;
-  const assets = fs.readdirSync("assets");
+  const path = "assets/videos/" + req.params.video;
+  const assets = fs.readdirSync("assets/videos");
   if (!assets.includes(req.params.video)) {
     res.status(404).send("<h1>404! file not found</h1>");
     return;

@@ -1,28 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upload a Video</title>
-  </head>
-  <body>
-    <form action="#" method="post" enctype="multipart/form-data">
-      <h3>Upload your video</h3>
-      <input
-        type="text"
-        placeholder="Enter your video title"
-        name="name"
-      /><br />
-      <br />
-      <textarea
-        name="desp"
-        placeholder="Enter your video description"
-      ></textarea
-      ><br />
-      <br />
-      <input type="file" name="video" /><br />
-      <br />
-      <input type="submit" />
-    </form>
-  </body>
-</html>
+<%- include("../partials/head.ejs") %>
+<form action="#"
+style="display: inline-block" class="m-2 p-2 border text-left" method="POST" enctype="multipart/form-data">
+  <h4 class="display-5">Upload your video</h4>
+  <hr>
+  <label>Enter your video title</label><br>
+  <input
+    type="text"
+    placeholder="Enter your video title"
+    name="name"
+  /><br /><br>
+  <label>Enter your video description</label><br>
+  <textarea
+    name="desp"
+    rows="10"
+    cols="25"
+    placeholder="Enter your video description"
+  ></textarea><br>
+  <br>
+  <label>Tags</label><br>
+  <input type="text" required placeholder="Split by commas" name="tags"/>
+  <br /><br>
+  <label>Upload your video here</label>
+  <input type="file" name="video" accept="video/*" /><br />
+  <br />
+
+  <label>Upload your thumbnail</label>
+  <input type="file" name="thumbnail" accept="image/*" /><br />
+  <br />
+
+
+  <input type="submit" />
+</form>
+<%- include("../partials/tail.ejs") %>

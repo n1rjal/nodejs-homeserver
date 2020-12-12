@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Player</title>
-  </head>
-  <body>
-    <div>
-      <h1>The player</h1>
+<%-include("../partials/head")%>
+    <div class="d-flex justify-content-flex-start py-5 align-items-center flex-column">
+      <h3><%=video.title%></h3><br>
       <video
         style="height: 400px; width: 600px"
         id="videoPlayer"
@@ -19,6 +12,8 @@
           type="video/mp4"
         />
       </video>
+      <p>
+        <%=video.desp%>
+      </p>
     </div>
-  </body>
-</html>
+<%-include("../partials/tail")%>

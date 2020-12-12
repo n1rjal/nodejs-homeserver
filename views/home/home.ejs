@@ -9,10 +9,14 @@
     <div class="row">
       The available videos are
       <ul>
-        <%for (let i=0;i<assets.length;i++){%>      
-        <li>
-          <a href="/watching/<%=assets[i]%>"><%=assets[i]%></a>
-        </li>
+        <%for (let i=0;i<assets.length;i++){
+          var asset = assets[i]
+          %>      
+        <div>
+          <a href="/watching/<%=asset.title%>">
+            <img src="/<%=asset.thumbnailPath%>" width="300" />
+          </a>
+        </div>
         <%}%>
 
       </ul>
